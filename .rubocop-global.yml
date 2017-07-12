@@ -1,0 +1,51 @@
+require: rubocop-rspec
+
+CollectionMethods:
+  PreferredMethods:
+    collect: map
+    inject: reduce
+    # Avoid confusion with ActiveRecord methods
+    find_all: select
+    find: detect
+
+FileName:
+  Exclude:
+    - Guardfile # Like Rakefile
+
+# Default is 79, a whole 1.25% reduction in usable space!
+LineLength:
+  Max: 80
+
+# RSpec's DSL leads to long blocks, and that's ok
+Metrics/BlockLength:
+  ExcludedMethods: ['context', 'describe', 'shared_examples']
+
+# Don't require underscores in long numbers, eg. 123_456_789.
+# We often have IDs, not "numbers".
+NumericLiterals:
+  Enabled: false
+
+# Don't force single line blocks to name their block arguments things like
+# |a, e| for accumulator, element. Eg:
+#
+#   things.reduce { |a, e| ... }
+#
+# We have more semantic context than Rubocop, so there's no reason it should be
+# dictating our variable names.
+SingleLineBlockParams:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    # Prefer [] for things that are arrays
+    '%i': '[]'
+    '%I': '[]'
+    '%w': '[]'
+    '%W': '[]'
+    # Prefer () otherwise
+    '%':  '()'
+    '%q': '()'
+    '%Q': '()'
+    '%r': '()'
+    '%s': '()'
+    '%x': '()'
