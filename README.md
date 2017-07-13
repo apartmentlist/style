@@ -23,7 +23,7 @@ Sandi Metz's _Looks Matter_). This repository contains the Apartment List style.
 2. Copy the minimal Rubocop configuration to your repository:
 
     ```
-    cp style/.rubocop-sampl.yml my_app/.rubocop.yml
+    cp style/.rubocop-sample.yml my_app/.rubocop.yml
     ```
 
     This file does little more than inherit from `.rubocop-global.yml`, which
@@ -69,4 +69,4 @@ it alone.
 Since we're intentionally making it difficult to change, I'm only going to give
 you one criterion to consider when you want to propose a change:
 
-1. The style is probably not going to change
+1. The style is probably not going to change, and that's ok!
