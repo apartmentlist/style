@@ -39,6 +39,26 @@ Sandi Metz's _Looks Matter_). This repository contains the Apartment List style.
     so you don't have to hit the network every time. There's no need for that
     cache to be committed to the repository or clutter `git status`.
 
+4. Install the Rake tasks:
+
+    ```
+    cp style/lib/tasks/style.rake my_app/lib/tasks/
+    ```
+
+    This provides you three Rake tasks:
+    - `style:branch` - Runs style checks only on your diff from `master`
+    - `style:all` - Runs all style checks
+    - `style:count` - Prints counts of all style violations
+
+5. Set your `Rakefile` default to include style checks:
+
+    ```
+    task default: %i[spec style:branch]
+    ```
+
+    Style checks will only run if specs passed, so you don't have to worry about
+    pretty code until you have working code.
+
 # Changing Style
 
 Thrash is anathema to consistency, so we are making it very difficult to change
