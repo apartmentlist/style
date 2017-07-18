@@ -15,7 +15,7 @@
 2. Copy the minimal Rubocop configuration to your repository:
 
     ```
-    cp style/.rubocop-sampl.yml my_app/.rubocop.yml
+    cp style/ruby/.rubocop-sampl.yml my_app/.rubocop.yml
     ```
 
     This file does little more than inherit from `.rubocop-global.yml`, which
@@ -34,7 +34,7 @@
 4. Install the Rake tasks:
 
     ```
-    cp style/lib/tasks/style.rake my_app/lib/tasks/
+    cp style/ruby/lib/tasks/style.rake my_app/lib/tasks/
     ```
 
     This provides you three Rake tasks:
