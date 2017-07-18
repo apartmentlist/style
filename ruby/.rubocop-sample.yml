@@ -1,5 +1,5 @@
 inherit_from:
-  - https://raw.githubusercontent.com/apartmentlist/style/master/.rubocop-global.yml
+  - https://raw.githubusercontent.com/apartmentlist/style/master/ruby/.rubocop-global.yml
 
 AllCops:
   # Ruby files that are otherwise missed, since default is just *.rb
