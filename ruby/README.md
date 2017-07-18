@@ -15,7 +15,7 @@
 2. Copy the minimal Rubocop configuration to your repository:
 
     ```
-    cp style/ruby/.rubocop-sampl.yml my_app/.rubocop.yml
+    cp style/ruby/.rubocop-sample.yml my_app/.rubocop.yml
     ```
 
     This file does little more than inherit from `.rubocop-global.yml`, which
