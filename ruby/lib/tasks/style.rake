@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-require 'rubocop/git/cli'
+begin
+  require 'rubocop/git/cli'
+rescue LoadError
+  # No need to have Rubocop in production, so be careful loading it.
+end
 
 namespace :style do
   desc 'Run style checks for the entire repository'
