@@ -1,0 +1,2 @@
+inherit_from:
+  - https://raw.githubusercontent.com/apartmentlist/style/master/ruby/global.yml

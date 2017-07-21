@@ -15,11 +15,11 @@
 2. Copy the minimal Rubocop configuration to your repository:
 
     ```
-    cp style/ruby/.rubocop-sample.yml my_app/.rubocop.yml
+    cp style/ruby/sample.yml my_app/.rubocop.yml
     ```
 
-    This file does little more than inherit from `.rubocop-global.yml`, which
-    allows us to configure and change global style in a single place.
+    This file does little more than inherit from `global.yml`, which allows us
+    to configure and change global style in a single place.
 
 3. Add this pattern to your repo's `.gitignore`:
 

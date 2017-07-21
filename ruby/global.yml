@@ -1,5 +1,16 @@
 require: rubocop-rspec
 
+AllCops:
+  # Ruby files that are otherwise missed, since default is just *.rb
+  Include:
+    - config.ru
+    - Gemfile
+    - Rakefile
+  # Files that aren't helpful to check, even if they're Ruby
+  Exclude:
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+
 CollectionMethods:
   PreferredMethods:
     collect: map
@@ -24,6 +35,13 @@ Metrics/BlockLength:
 # We often have IDs, not "numbers".
 NumericLiterals:
   Enabled: false
+
+# We've set RSpec to infer_spec_type_from_file_location!, but RuboCop doesn't
+# have access to that config. Rather than have to tag everything `type: :view`,
+# just ignore the cop for those specs.
+RSpec/DescribeClass:
+  Exclude:
+    - spec/views/**/*_spec.rb
 
 # Don't force single line blocks to name their block arguments things like
 # |a, e| for accumulator, element. Eg:
