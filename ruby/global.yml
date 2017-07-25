@@ -59,6 +59,12 @@ RSpec/NotToNot:
 SingleLineBlockParams:
   Enabled: false
 
+# Migrations are particularly self-explanatory, so there's very little reason to
+# write class documentation for them.
+Style/Documentation:
+  Exclude:
+    - db/migrate/*.rb
+
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     # Prefer [] for things that are arrays
