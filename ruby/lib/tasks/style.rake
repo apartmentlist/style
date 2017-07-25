@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
+# No need to have Rubocop in production, so be careful loading it.
 begin
   require 'rubocop/git/cli'
 rescue LoadError
-  # No need to have Rubocop in production, so be careful loading it.
+  puts <<-MSG
+    Warning: RuboCop::Git is not available.
+    Run `gem install rubocop-git` or add it to your Gemfile
+  MSG
 end
 
 namespace :style do
@@ -19,12 +23,12 @@ namespace :style do
 
   desc 'Print total violation counts'
   task count: :environment do
-    puts %x(
+    puts `
       rubocop --display-cop-names |
       grep -oE '[CW]: [^:]+'      | # Extract "C: Thing/YouBroke"
       sort                        |
       uniq -c                     |
       sort -rn
-    )
+    `
   end
 end
