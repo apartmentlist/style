@@ -1,0 +1,81 @@
+require: rubocop-rspec
+
+AllCops:
+  # Ruby files that are otherwise missed, since default is just *.rb
+  Include:
+    - config.ru
+    - Gemfile
+    - Rakefile
+  # Files that aren't helpful to check, even if they're Ruby
+  Exclude:
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+
+CollectionMethods:
+  PreferredMethods:
+    collect: map
+    inject: reduce
+    # Avoid confusion with ActiveRecord methods
+    find_all: select
+    find: detect
+
+FileName:
+  Exclude:
+    - Guardfile # Like Rakefile
+
+# Default is 79, a whole 1.25% reduction in usable space!
+LineLength:
+  Max: 80
+
+# RSpec's DSL leads to long blocks, and that's ok
+Metrics/BlockLength:
+  ExcludedMethods: ['context', 'describe', 'shared_examples']
+
+# Don't require underscores in long numbers, eg. 123_456_789.
+# We often have IDs, not "numbers".
+NumericLiterals:
+  Enabled: false
+
+# We've set RSpec to infer_spec_type_from_file_location!, but RuboCop doesn't
+# have access to that config. Rather than have to tag everything `type: :view`,
+# just ignore the cop for those specs.
+RSpec/DescribeClass:
+  Exclude:
+    - spec/views/**/*_spec.rb
+
+# The default is not_to, but we've historically used to_not basically 100% of
+# the time. There doesn't appear to be a particular reason one is better, and
+# it's not worth changing.
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+
+# Don't force single line blocks to name their block arguments things like
+# |a, e| for accumulator, element. Eg:
+#
+#   things.reduce { |a, e| ... }
+#
+# We have more semantic context than Rubocop, so there's no reason it should be
+# dictating our variable names.
+SingleLineBlockParams:
+  Enabled: false
+
+# Migrations are particularly self-explanatory, so there's very little reason to
+# write class documentation for them.
+Style/Documentation:
+  Exclude:
+    - db/migrate/*.rb
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    # Prefer [] for things that are arrays
+    '%i': '[]'
+    '%I': '[]'
+    '%w': '[]'
+    '%W': '[]'
+    # Prefer () otherwise
+    '%':  '()'
+    '%q': '()'
+    '%Q': '()'
+    '%r': '()'
+    '%s': '()'
+    '%x': '()'
