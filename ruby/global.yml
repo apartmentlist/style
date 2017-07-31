@@ -65,6 +65,12 @@ Style/Documentation:
   Exclude:
     - db/migrate/*.rb
 
+# This requires us to parenthesize simple things like (a % 10).zero?, which
+# we've never done and find cumbersome without improving clarity. The community
+# doesn't appear to have a clear reason why one is superior.
+Style/NumericPredicate:
+  Enabled: false
+
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     # Prefer [] for things that are arrays
