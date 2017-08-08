@@ -1,5 +1,11 @@
 # Installation
 
+### Gem
+
+`gem install blue_steel`
+
+### Manually
+
 1. Add these gems to your `Gemfile`, most likely just in the `development`
    group:
 
