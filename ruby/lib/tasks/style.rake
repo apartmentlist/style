@@ -18,7 +18,7 @@ namespace :style do
 
   desc 'Run style checks on your diff from `master`'
   task branch: :environment do
-    RuboCop::Git::CLI.new.run(%w[--display-cop-names master])
+    exit 1 unless system('rubocop-git', '--display-cop-names', 'master')
   end
 
   desc 'Print total violation counts'
