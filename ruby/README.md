@@ -56,3 +56,16 @@
 
     Style checks will only run if specs passed, so you don't have to worry about
     pretty code until you have working code.
+
+6. If you don't want CI to run style checks (perhaps because HoundCI does that
+   on PRs), create a task to run without them:
+
+   ```
+   task ci: %i[spec]
+   ```
+
+   Presuming CI is handled by Travis, configure `.travis.yml` with
+
+   ```yaml
+   script: bundle exec rake ci
+   ```
