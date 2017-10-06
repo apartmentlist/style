@@ -9,14 +9,7 @@
 1. Add these gems to your `Gemfile`, most likely just in the `development`
    group:
 
-    - [`rubocop`](https://github.com/bbatsov/rubocop) - The base rules, more or
-      less agreed upon by the Ruby community.
-    - [`rubocop-rspec`](https://github.com/backus/rubocop-rspec) - More
-      customized rules for the `spec/` directory, where RSpec's DSL is more
-      valuable than "normal" Ruby style.
-    - [`rubocop-git`](https://github.com/m4i/rubocop-git) - This lets you run
-      style checks on just your changes, so you're not responsible for a whole
-      history of accumulated style mishaps.
+  - [`blue_steel`][1]
 
 2. Copy the minimal Rubocop configuration to your repository:
 
@@ -30,14 +23,17 @@
 3. Add this pattern to your repo's `.gitignore`:
 
     ```
-    .rubocop-http*yml
+    /.rubocop-https*yml
     ```
 
     When Rubocop inherits from a URL, it downloads and caches the file locally
     so you don't have to hit the network every time. There's no need for that
     cache to be committed to the repository or clutter `git status`.
 
-4. Install the Rake tasks:
+4. Install the Rake tasks (If you are not in a Rails app):
+
+    In Rails applications `blue_steel` will automatically add its Rake tasks for
+    you. Otherwise, install them manually:
 
     ```
     cp style/ruby/lib/tasks/style.rake my_app/lib/tasks/
@@ -69,3 +65,5 @@
    ```yaml
    script: bundle exec rake ci
    ```
+
+[1]: https://github.com/apartmentlist/style/tree/master/ruby/blue_steel
