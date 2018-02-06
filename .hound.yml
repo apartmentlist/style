@@ -1,1 +1,7 @@
-ruby/hound.yml
+eslint:
+  enabled: true
+  config_file: config/eslint.json
+jshint:
+  enabled: false
+ruby:
+  config_file: https://raw.githubusercontent.com/apartmentlist/style/master/ruby/global.yml

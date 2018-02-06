@@ -1,4 +1,0 @@
-# This file is symlinked from the root of the project because that's where Hound
-# looks for .hound.yml
-ruby:
-  config_file: https://raw.githubusercontent.com/apartmentlist/style/master/ruby/global.yml
