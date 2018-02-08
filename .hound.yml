@@ -5,3 +5,7 @@ jshint:
   enabled: false
 ruby:
   config_file: https://raw.githubusercontent.com/apartmentlist/style/master/ruby/global.yml
+sass-lint:
+  enabled: true
+scss:
+  enabled: false
