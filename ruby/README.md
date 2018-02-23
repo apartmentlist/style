@@ -47,7 +47,7 @@
 5. Set your `Rakefile` default to include style checks:
 
     ```
-    task default: %i[spec style:branch]
+    task default: %i[ci style:branch]
     ```
 
     Style checks will only run if specs passed, so you don't have to worry about
