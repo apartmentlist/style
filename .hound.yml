@@ -1,6 +1,6 @@
 eslint:
   enabled: true
-  config_file: config/eslint.json
+  config_file: config/.eslintrc
 jshint:
   enabled: false
 ruby:
