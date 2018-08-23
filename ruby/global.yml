@@ -48,6 +48,12 @@ RSpec/DescribeClass:
 # it's not worth changing.
 RSpec/NotToNot:
   EnforcedStyle: to_not
+  
+# The default is 3 but we'd like to be able to describe the class, give context
+# for the method being tested, and still have two contexts left to describe the
+# the tests.
+RSpec/NestedGroups:
+  Max: 4
 
 # Don't force single line blocks to name their block arguments things like
 # |a, e| for accumulator, element. Eg:
