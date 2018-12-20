@@ -36,6 +36,10 @@ Metrics/BlockLength:
 NumericLiterals:
   Enabled: false
 
+# We speak English better than Rubocop does
+RSpec/ContextWording:
+  Enabled: false
+
 # We've set RSpec to infer_spec_type_from_file_location!, but RuboCop doesn't
 # have access to that config. Rather than have to tag everything `type: :view`,
 # just ignore the cop for those specs.
