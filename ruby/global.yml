@@ -8,6 +8,9 @@ AllCops:
     - Rakefile
   # Files that aren't helpful to check, even if they're Ruby
   Exclude:
+    - 'bin/bundle'
+    - 'bin/rails'
+    - 'bin/rake'
     - 'db/schema.rb'
     - 'node_modules/**/*'
 
