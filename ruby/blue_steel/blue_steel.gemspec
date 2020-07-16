@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["cirmas@apartmentlist.com"]
 
   spec.summary       = %q{Apartment List's internal coding style guide}
-  spec.homepage      = "https://github.com/apartmentlist/style/tree/master/ruby/blue_steel"
+  spec.homepage      = "https://github.com/apartmentlist/style/tree/main/ruby/blue_steel"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

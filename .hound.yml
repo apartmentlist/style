@@ -4,7 +4,7 @@ eslint:
 jshint:
   enabled: false
 ruby:
-  config_file: https://raw.githubusercontent.com/apartmentlist/style/master/ruby/global.yml
+  config_file: https://raw.githubusercontent.com/apartmentlist/style/main/ruby/global.yml
 sass-lint:
   enabled: true
 scss:

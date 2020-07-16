@@ -16,9 +16,9 @@ namespace :style do
     system('rubocop --display-cop-names')
   end
 
-  desc 'Run style checks on your diff from `master`'
+  desc 'Run style checks on your diff from `main`'
   task branch: :environment do
-    RuboCop::Git::CLI.new.run(%w[--display-cop-names master])
+    RuboCop::Git::CLI.new.run(%w[--display-cop-names main])
   end
 
   desc 'Print total violation counts'

@@ -40,7 +40,7 @@
     ```
 
     This provides you three Rake tasks:
-    - `style:branch` - Runs style checks only on your diff from `master`
+    - `style:branch` - Runs style checks only on your diff from `main`
     - `style:all` - Runs all style checks
     - `style:count` - Prints counts of all style violations
 
@@ -66,4 +66,4 @@
    script: bundle exec rake ci
    ```
 
-[1]: https://github.com/apartmentlist/style/tree/master/ruby/blue_steel
+[1]: https://github.com/apartmentlist/style/tree/main/ruby/blue_steel
