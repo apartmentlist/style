@@ -26,9 +26,9 @@ FileName:
   Exclude:
     - Guardfile # Like Rakefile
 
-# Default is 79, a whole 1.25% reduction in usable space!
+# Used to be 80, new concensus is 120 as of 2020.
 LineLength:
-  Max: 80
+  Max: 120
 
 # RSpec's DSL leads to long blocks, and that's ok
 Metrics/BlockLength:
