@@ -13,6 +13,7 @@ AllCops:
     - '**/Gemfile'
     - '**/Rakefile'
   Exclude:
+    - 'bin/bundle' # auto-generated
     - 'bin/rspec' # auto-generated
     - 'bin/spring' # auto-generated
     - 'bin/setup' # auto-generated
