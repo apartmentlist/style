@@ -172,7 +172,7 @@ Metrics/AbcSize:
 # RSpec's DSL leads to long blocks, and that's ok
 Metrics/BlockLength:
   Max: 50
-  AllowedMethods: ["context", "describe", "shared_examples"]
+  IgnoredMethods: ["context", "describe", "shared_examples"]
 
 # Prevent classes from being too long
 Metrics/ClassLength:
