@@ -1,4 +1,5 @@
-require: rubocop-rspec
+plugins:
+  - rubocop-rspec
 
 AllCops:
   # Ruby files that are otherwise missed, since default is just *.rb
@@ -24,12 +25,15 @@ FileName:
     - Guardfile # Like Rakefile
 
 # Used to be 80, new concensus is 120 as of 2020.
-LineLength:
+Layout/LineLength:
   Max: 120
 
 # RSpec's DSL leads to long blocks, and that's ok
 Metrics/BlockLength:
-  ExcludedMethods: ['context', 'describe', 'shared_examples']
+  AllowedMethods:
+    - context
+    - describe
+    - shared_examples
 
 # Don't require underscores in long numbers, eg. 123_456_789.
 # We often have IDs, not "numbers".

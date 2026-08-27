@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-rspec
   - rubocop-rails
 
@@ -99,18 +99,8 @@ AllCops:
   # value to "true".
   AllowSymlinksInCacheRootDirectory: false
 
-  # What MRI version of the Ruby interpreter is the inspected code intended to
-  # run on? (If there is more than one, set this to the lowest version.)
-  # If a value is specified for TargetRubyVersion then it is used. Acceptable
-  # values are specificed as a float (i.e. 2.5); the teeny version of Ruby
-  # should not be included. If the project specifies a Ruby version in the
-  # .ruby-version file, Gemfile or gems.rb file, RuboCop will try to determine
-  # the desired version of Ruby by inspecting the .ruby-version file first,
-  # followed by the Gemfile.lock or gems.locked file. (Although the Ruby version
-  # is specified in the Gemfile or gems.rb file, RuboCop reads the final value
-  # from the lock file.) If the Ruby version is still unresolved, RuboCop will
-  # use the oldest officially supported Ruby version (currently Ruby 2.4).
-  TargetRubyVersion: 2.6.6
+  # TargetRubyVersion is resolved from .ruby-version, Gemfile, or Gemfile.lock when unset.
+  SuggestExtensions: false
 
 #######################
 ######## STYLE ########
@@ -172,7 +162,10 @@ Metrics/AbcSize:
 # RSpec's DSL leads to long blocks, and that's ok
 Metrics/BlockLength:
   Max: 50
-  IgnoredMethods: ["context", "describe", "shared_examples"]
+  AllowedMethods:
+    - context
+    - describe
+    - shared_examples
 
 # Prevent classes from being too long
 Metrics/ClassLength:
